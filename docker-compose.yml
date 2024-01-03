@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: nest
     volumes:
-      - dev-db-data:/var/lib/postgresql/data
+      - ./dev-db-data:/var/lib/postgresql/data
 
   test-db:
     image: postgres:13
@@ -20,8 +20,4 @@ services:
       POSTGRES_PASSWORD: 123
       POSTGRES_DB: nest
     volumes:
-      - test-db-data:/var/lib/postgresql/data
-
-volumes:
-  dev-db-data:
-  test-db-data:
+      - ./test-db-data:/var/lib/postgresql/data
